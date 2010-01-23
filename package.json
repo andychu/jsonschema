@@ -1,0 +1,19 @@
+{
+    "name": "jsonschema", 
+    "description": "JSON Schema validation library",
+    "keywords": [
+        "json",
+        "schema",
+        "validation",
+    ],
+    "author": "Kris Zyp",
+    "contributors": [
+        "Andy Chu (andy@chubot.org)"
+    ],
+    "lib": "lib",
+    "license": [
+        "MIT License",
+    ],
+    "dependencies": [
+    ]
+}
