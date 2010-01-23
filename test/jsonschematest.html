@@ -42,6 +42,7 @@ var biggerSchema = {
 window.onload = function() {
 	showResults("simpleObj", JSONSchema.validate(simpleObj));
 	showResults("biggerObj", JSONSchema.validate(biggerObj,biggerSchema));
+  showResults("empty", JSONSchema.validate({},biggerSchema));
 	function showResults(testName, results) {
 		if (results.length) { 
 			resultsString = "Errors:";

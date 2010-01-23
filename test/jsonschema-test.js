@@ -12,11 +12,12 @@ exports.testValidate = function() {
     "age" : 30,
     "schema" : {
       "name": {"type":"string",
-         "required":true},
+               "required":true},
       "age" : {"type":"number",
-        "maximum":125}
+               "maximum":125}
     }
   };
+
   var biggerObj = {
     "name" : "John Doe",
     "born" : "1979-03-23T06:26:07Z",
@@ -27,17 +28,16 @@ exports.testValidate = function() {
   };
 
   var biggerSchema = {
-      "name": {"type":"string",
-    length:5,
-        "required":true},
-        "final":true,
+      "name": {"type":"string", length: 5,
+               "required":true},
+                "final":true,
       "born" : {"type":["number","string"], //allow for a numeric year, or a full date
         "format":"date", //format when a string value is used
         "minimum":1900, //min/max for when a number value is used
         "maximum":2010
       },
       "gender" : {"type":"string",
-      "options":["male","female"]},
+                  "options":["male","female"]},
       "address" : {"type":
           {"street":{"type":"string"},
            "city":{"type":"string"},
@@ -46,10 +46,11 @@ exports.testValidate = function() {
   };
 
 	var res1 = JSONSchema.validate(simpleObj);
-	var res2 = JSONSchema.validate(biggerObj,biggerSchema);
-
   print(json.stringify(res1));
+	var res2 = JSONSchema.validate(biggerObj, biggerSchema);
   print(json.stringify(res2));
+	var res3 = JSONSchema.validate({}, biggerSchema);
+  print(json.stringify(res3));
 }
 
 if (require.main === module.id) {
